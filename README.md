@@ -24,12 +24,35 @@ services:
     tty: true
 ```
 3. ビルド
-sudo docker-compose build
+`sudo docker-compose build`
 4. コンテナ立ち上げ
-sudo docker-compose up -d
+`sudo docker-compose up -d`
 5. コンテナに入る
 ※ファイル編集時はコンテナ外で編集する方が楽
-sudo docker-compose exec prolog bash
+`sudo docker-compose exec prolog bash`
+
+## Prologメモ
+### 構造
+- 述語論理とコーディングできる（要は高校数学のP → Qの命題構造をそのままプログラミングで扱える）
+- 以下の３つの概念
+  - 事実：「太郎は人である」
+  - 規則：「Aさんが人ならば、Aさんはいずれ死ぬ」
+  - 帰結：「太郎はいずれ死ぬ」 -> true
+
+### 記法
+1. 述語（事実の記述に用いることが多い）
+``` prolog
+% taroならばhuman
+human(taro)
+```
+
+2. 規則
+```prolog
+% Aがhumanである場合、Aはmortalである
+% P ⇨ Qのとき、Q :- P
+mortal(A) :- human(A)
+```
+
 
 ## 参考
 ### 環境構築
