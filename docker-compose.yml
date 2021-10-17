@@ -1,0 +1,10 @@
+version: "3"
+services:
+  prolog:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    container_name: prolog
+    volumes:
+      - ./:/usr/src
+    tty: true
