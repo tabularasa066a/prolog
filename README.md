@@ -1,6 +1,6 @@
 # Prologを初めてみる
 ## 環境構築
-### dockerを用いる
+Dockerを用いる
 1. Dockerfileを作る
 ```yaml
 FROM swipl
@@ -23,16 +23,17 @@ services:
       - ./:/usr/src
     tty: true
 ```
-
-### docker commands
-1. ビルド
+3. ビルド
 sudo docker-compose build
-2. コンテナ立ち上げ
+4. コンテナ立ち上げ
 sudo docker-compose up -d
-3. コンテナに入る
+5. コンテナに入る
 ※ファイル編集時はコンテナ外で編集する方が楽
 sudo docker-compose exec prolog bash
 
 ## 参考
 ### 環境構築
 https://qiita.com/physicalcotton/items/3e8e7fe3dc208856cd0a
+
+### 教材（少な・・・）
+http://www.k-techlabo.org/www_prolog/prolog_main.pdf
